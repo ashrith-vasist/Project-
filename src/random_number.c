@@ -7,14 +7,13 @@ typedef struct node{
 }node;
 node *start=NULL;
 int data;
+//fucntion for geting random numbers below 20
 int numbers()
 {
   data=rand()%20;
   return data;
 }
-
-
-// int get_num=get_number();
+//Adding the number into a linked list
 node *newnode(int n)
 {
   node *temp=(node*)malloc(sizeof(node));
@@ -41,24 +40,7 @@ void add_at_end(int num)
   temp->next=newnode(num);
 
 }
-// void display()
-// {
-//   int c=0;
-//   node *temp=start;
-//   while(temp->next!=NULL)
-//   {
-//     if(temp->count==1)
-//     {
-//       printf("%d  -  %d\n",temp->data,temp->count);
-//     }
-//     else if(temp->count>1)
-//     {
-//       if(c)
-      
-//     }
-//   }
- 
-// }
+//Function to check the number of time a number is repating
 int check(int value,node*temp1)
 {
   node *temp=start;
@@ -72,10 +54,7 @@ int check(int value,node*temp1)
     temp=temp->next;
   }
   printf("%d  -  %d\n",temp1->data,temp1->count);
-  
-  
-    
-  
+ 
 }
   
 
@@ -93,6 +72,7 @@ int main()
     for(i=0;i<=n;i++)
   { 
     num=numbers();
+    //Wrting the random numbers into the file.
     fprintf(fp,"%d\n",num);
     add_at_end(num);
 
@@ -108,6 +88,4 @@ int main()
     temp=temp->next;
   }  
   
-  
-
 }
